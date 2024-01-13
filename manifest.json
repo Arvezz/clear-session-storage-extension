@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Clear session storage",
+  "version": "1.0",
+  "description": "Clears session storage.",
+  "browser_action": {
+    "default_icon": "icons/clean.png"
+  },
+  "permissions": [ "storage" ],
+  "background": {
+    "scripts": [ "background.js" ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ],
+      "js": [ "contentScript.js" ]
+    }
+  ]
+}
